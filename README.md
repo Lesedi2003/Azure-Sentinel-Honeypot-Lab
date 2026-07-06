@@ -73,10 +73,7 @@ Incidents & Investigations
 **Purpose:**
 Logical container used to organize all Azure resources for the SOC lab.
 
-📷 Screenshot:
-```
-Insert screenshot here
-```
+![Resource Group](Screenshot/01.Resource-group-overview.png)
 
 ---
 
