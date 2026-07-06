@@ -94,7 +94,7 @@ An internet-facing Windows virtual machine configured to attract unauthorized lo
 | Public IP | |
 | Monitoring | Enabled |
 
-<img width="1135" height="587" alt="resource group overview" src="https://github.com/user-attachments/assets/c31bce2e-1261-4f3a-bb4f-2913792af260" />
+screenshot
 
 ```
 
