@@ -117,13 +117,13 @@ The VM was intentionally exposed to the internet to attract unauthorized Remote 
 ---
 ## Configure Network Security Group
 
-A Network Security Group (NSG) was configured to allow inbound RDP traffic on TCP port 3389.
+A Network Security Group (NSG) was configured to allow .
 
 This intentionally exposed the virtual machine to the public internet, allowing attackers and automated scanning bots to attempt Remote Desktop authentication.
 
 While this configuration would be considered insecure in a production environment, it is appropriate for a controlled honeypot designed for security monitoring.
 
-![NSG]()
+![NSG](Screenshort/04.NSG-Allow-Traffic.png)
 
 
 ## 📚 Lessons Learned
