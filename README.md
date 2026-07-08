@@ -311,7 +311,7 @@ Instead of leaving Windows Security Events on the virtual machine, Azure collect
 
 Without a Log Analytics Workspace, Microsoft Sentinel would have no security data to analyze.
 
-![Log Analytics Workspace](Screenshots/09.LAW-Connected-SIEM.png)
+![Log Analytics Workspace](Screenshots/09.LAW.png)
 
 ---
 
