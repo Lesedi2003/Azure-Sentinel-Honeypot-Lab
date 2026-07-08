@@ -2,3 +2,6 @@ SecurityEvent
 | where EventID == 4625
 | summarize Attempts=count() by Account
 | order by Attempts desc
+
+Counts how many authentication attempts were made against each username.
+This helps identify which accounts attackers are targeting the most.
