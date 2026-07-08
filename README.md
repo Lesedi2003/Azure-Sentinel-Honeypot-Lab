@@ -106,27 +106,36 @@ The virtual machine receives its private IP address from this virtual network wh
 
 ## Deploy Windows Virtual Machine
 
-A Windows Server virtual machine was deployed to act as the honeypot.
+The VM was intentionally exposed to the public internet as a honeypot to attract reconnaissance activity, automated scanning, and unauthorized authentication attempts.
 
-The VM was intentionally exposed to the internet to attract unauthorized Remote Desktop Protocol (RDP) authentication attempts.
-
-**Screenshot**
+Although the primary investigation focused on Windows authentication events, the network configuration allowed unrestricted inbound traffic to increase the likelihood of observing malicious activity.
 
 ![Virtual Machine](Screenshots/03.Virtual-Machine.png)
 
 ---
 ## Configure Network Security Group
 
-A Network Security Group (NSG) was configured to allow .
+A custom inbound Network Security Group (NSG) rule named **DANGER_AllowAnyCustomAnyInbound** was created to allow **all inbound network traffic** to the virtual machine.
 
-This intentionally exposed the virtual machine to the public internet, allowing attackers and automated scanning bots to attempt Remote Desktop authentication.
+Unlike a production environment, where only required ports would be exposed, this lab intentionally permits all inbound traffic to maximize the likelihood of receiving unsolicited connection attempts from internet scanners and automated attack tools.
 
-While this configuration would be considered insecure in a production environment, it is appropriate for a controlled honeypot designed for security monitoring.
+This configuration transforms the virtual machine into a more effective honeypot, allowing a wider range of network activity to be observed and analyzed within Microsoft Sentinel.
+
+> **Note:** This configuration is intentionally insecure and should never be used in a production environment. It was implemented solely for security research and monitoring purposes.
 
 ![NSG](Screenshots/04.NSG-Allow-Traffic.png)
 
+## Disable Windows Firewall
 
+Windows Defender Firewall was temporarily disabled on the virtual machine.
 
+This allows inbound network traffic to reach the operating system without being blocked, increasing the likelihood of detecting internet-based reconnaissance and brute-force authentication attempts.
+
+> **Note:** Disabling the firewall is intentionally insecure and should never be performed on production systems. It was done solely for this controlled honeypot lab.
+
+![Firewall Disabled](Screenshots/06.Disable-Firewall.png)
+
+---
 
 ## 📚 Lessons Learned
 
