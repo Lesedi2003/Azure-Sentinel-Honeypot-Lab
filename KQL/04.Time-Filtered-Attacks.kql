@@ -1,3 +1,6 @@
 SecurityEvent
 | where EventID == 4625
 | where TimeGenerated > ago(30m)
+
+Filters events to show only attacks that occurred within the last 30 minutes.
+During testing, different time windows (such as 1 minute, 10 minutes, and 1 hour) were used to observe attacker activity in near real time.
