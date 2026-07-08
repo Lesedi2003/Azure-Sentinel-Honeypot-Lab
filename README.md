@@ -443,7 +443,11 @@ This provided additional information such as:
 - Network owner
 - Autonomous System Number (ASN)
 
-Although this information was gathered outside Microsoft Sentinel, it provided useful context during the investigation.
+Although the external IP lookup provided useful context, it required leaving Microsoft Sentinel and relying on a third-party service.
+
+So, the goal of the was to bring that same geographic information directly into Microsoft Sentinel. By enriching the authentication logs with a Watchlist, I could view details such as the attacker's country, city, latitude, and longitude without leaving the SIEM platform.
+
+This creates a more efficient investigation workflow, allowing analysts to investigate authentication events and their geographic origin from a single interface.
 
 ![IP Lookup](Screenshots/14.IPLookUp.png)
 
@@ -461,8 +465,8 @@ According to Microsoft, a **Watchlist** enables the collection of data from exte
 
 In this project, the Watchlist acts as a reference table that Microsoft Sentinel uses to match attacker IP addresses with geographic information such as:
 
-- Country
-- City
+- Country Name
+- City name
 - Latitude
 - Longitude
 
@@ -478,7 +482,7 @@ After preparing the dataset, I created a Microsoft Sentinel Watchlist named **ge
 
 This allows KQL to compare attacker IP addresses against the GeoIP database and automatically return location information.
 
-Instead of only seeing an IP address, I could now identify the country and city associated with each attack.
+Instead of only seeing an IP address, I could now identify the country and city associated with each attack in sentinel, not having to go out to look for it somewhere else.
 
 ![GeoIP Watchlist](Screenshots/16.Watchlist.png)
 
@@ -492,10 +496,14 @@ Using the `_GetWatchlist()` function, I was able to retrieve the contents of the
 The Watchlist now included details such as:
 
 - IP address ranges (network)
-- Country
-- City
+- Country Name
+- City Name
 - Latitude
 - Longitude
+
+These are the same geographic details that were identified during the external IP lookup earlier in the investigation. However, instead of relying on a third-party service, the information is now available directly within Microsoft Sentinel.
+
+Rather than modifying the original **SecurityEvent** table, the Watchlist acts as a reference dataset. This provides additional context for investigations while keeping the entire analysis within Microsoft Sentinel.
 
 This verification step confirmed that the Watchlist was ready to be used for data enrichment during the investigation.
 
@@ -508,7 +516,7 @@ _GetWatchlist("geoip")
 
 ## 🧠 Enriching Security Events with KQL
 
-Once the Watchlist had been uploaded, I used the `ipv4_lookup()` function to combine the failed authentication logs with the GeoIP dataset.
+Once the Watchlist had been uploaded, I used the `ipv4_lookup()` function to combine the failed authentication logs with the GeoIP dataset.The `ipv4_lookup()` function enriches the authentication logs by adding geographic information to the query results.
 
 ```kusto
 let GeoIPDB_FULL = _GetWatchlist("geoip");
@@ -530,8 +538,6 @@ WindowsEvents
 ```
 
 This process is known as **data enrichment**.
-
-Rather than replacing the original logs, enrichment adds additional context that makes investigations much more meaningful.
 
 For example, instead of only seeing:
 
@@ -618,7 +624,7 @@ During this project, the internet-facing virtual machine began receiving authent
 Some of the observations included:
 
 - Multiple failed Remote Desktop authentication attempts (Event ID **4625**)
-- Repeated attempts against common usernames such as **Administrator** and **Admin** as well as **Test**
+- Repeated attempts against common usernames such as **Administrator**, **Admin** as well as **Test**
 - Authentication attempts originating from multiple public IP addresses
 - Geographic distribution of attack sources using GeoIP enrichment
 - Successful collection and investigation of Windows Security Events using Microsoft Sentinel
