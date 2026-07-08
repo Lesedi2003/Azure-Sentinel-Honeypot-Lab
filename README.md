@@ -211,8 +211,7 @@ Once the Azure Monitor Agent began forwarding telemetry, Kusto Query Language (K
 
 The following query displays all Windows Security Events:
 
-kql
-SecurityEvent
+![Security Event table](Screenshots/12.Logs-generated.png)
 
 
 ---
