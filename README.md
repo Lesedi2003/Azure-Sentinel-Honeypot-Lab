@@ -89,7 +89,7 @@ A dedicated Azure Resource Group was created to logically organize all resources
 
 The Resource Group simplifies management by allowing every component of the lab to be deployed, monitored, and deleted together if required.
 
-![Resourec Group](Screenshort/01.Resource-group-overview.png)
+![Resourec Group](Screenshots/01.Resource-group-overview.png)
 
 ---
 
@@ -100,7 +100,7 @@ An Azure Virtual Network (VNet) was deployed to provide network connectivity for
 
 The virtual machine receives its private IP address from this virtual network while also exposing a public IP address for internet accessibility.
 
-![Virtual Network](Screenshort/02.Virtual-Network.png)
+![Virtual Network](Screenshots/02.Virtual-Network.png)
 
 ---
 
@@ -112,7 +112,7 @@ The VM was intentionally exposed to the internet to attract unauthorized Remote 
 
 **Screenshot**
 
-![Virtual Machine](Screenshort/03.Virtual-Machine.png)
+![Virtual Machine](Screenshots/03.Virtual-Machine.png)
 
 ---
 ## Configure Network Security Group
@@ -123,7 +123,7 @@ This intentionally exposed the virtual machine to the public internet, allowing 
 
 While this configuration would be considered insecure in a production environment, it is appropriate for a controlled honeypot designed for security monitoring.
 
-![NSG](Screenshort/04.NSG-Allow-Traffic.png)
+![NSG](Screenshots/04.NSG-Allow-Traffic.png)
 
 
 
