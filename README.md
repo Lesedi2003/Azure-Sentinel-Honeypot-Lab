@@ -153,7 +153,7 @@ Windows recorded the authentication failure in the Security Event Log using **Ev
 
 These events would later be collected by Azure Monitor Agent and forwarded to the Log Analytics Workspace for analysis.
 
-![Windows Event Viewer - Failed Login](Screenshot/08.EventViewer-4625.png)
+![Windows Event Viewer - Failed Login](Screenshots/08.Logon-Failed.png)
 
 ---
 
