@@ -193,7 +193,7 @@ This confirmed that:
 
 Successfully connecting to the server also confirmed that the Network Security Group configuration was working as expected.
 
-![RDP Connection](Screenshots/05.RDP-Connection.png)
+![RDP Connection](Screenshots/05.Connected-VM-to-Windows.png)
 
 ---
 
@@ -207,7 +207,7 @@ This increases the likelihood of receiving unsolicited traffic, allowing Microso
 
 > ⚠️ **Important:** Disabling Windows Firewall is intentionally insecure and should never be done on production systems. It was performed only for this controlled cybersecurity lab.
 
-![Windows Firewall Disabled](Screenshots/06.Disable-Firewall.png)
+![Windows Firewall Disabled](Screenshots/06.Diable-Windows-Firewall.png)
 
 ---
 
@@ -223,11 +223,11 @@ Receiving successful responses confirmed that:
 
 At this point, the environment was ready to begin attracting real-world network activity.
 
-![Connectivity Test](Screenshots/07.Ping-Test.png)
+![Connectivity Test](Screenshots/07.Ping-VM.png)
 
 ---
 
-# 📝 Understanding Windows Security Events
+## 📝 Understanding Windows Security Events
 
 Before forwarding logs into Microsoft Sentinel, I first wanted to understand how Windows records security activity locally.
 
@@ -263,7 +263,7 @@ Failed logon events are some of the most commonly investigated events in a Secur
 
 Later in the project, these same events become the primary source of data used for threat hunting within Microsoft Sentinel.
 
-![Failed Logon](Screenshots/09.EventViewer-4625.png)
+![Failed Logon](Screenshots/08.Logon-Failed.png)
 
 ---
 
@@ -279,7 +279,7 @@ For example, an analyst might investigate whether a failed login attempt was eve
 
 Understanding the relationship between these events helps identify suspicious authentication activity.
 
-![Successful Logon](Screenshots/10.EventViewer-4624.png)
+![Successful Logon](Screenshots/Successful-Logon.png)
 
 ---
 
