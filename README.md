@@ -143,7 +143,7 @@ Successful replies confirmed that the virtual machine was reachable from the pub
 
 This verified that external systems would also be able to communicate with the honeypot.
 
-![Ping Test](Screenshot/07.Ping-Test.png)
+![Ping Test](Screenshots/07.Ping-VM.png)
 
 ## Generate Failed Login Events
 
