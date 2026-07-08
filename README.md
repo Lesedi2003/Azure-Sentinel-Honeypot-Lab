@@ -505,7 +505,7 @@ This verification step confirmed that the Watchlist was ready to be used for dat
 ```kusto
 _GetWatchlist("geoip")
 ```
-![Get Watchlist](17.Location-Detected-Logs.png)
+![Get Watchlist](Screenshots/17.Location-Detected-Logs.png)
 
 ---
 
