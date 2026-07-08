@@ -14,3 +14,7 @@ WindowsEvents
     City = cityname,
     Latitude = latitude,
     Longitude = longitude
+
+Joins the SecurityEvent table with the GeoIP Watchlist to enrich attacker IP addresses with geographic information.
+
+This enables Microsoft Sentinel Workbooks to visualize attacker locations on an interactive world map.
