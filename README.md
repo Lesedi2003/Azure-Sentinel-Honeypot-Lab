@@ -266,7 +266,7 @@ Watchlists provide additional reference data that can be joined with log data du
 
 In this lab, the watchlist allows source IP addresses to be mapped to geographic locations.
 
-![Watchlist](Screenshot/17.Watchlist.png)
+![Watchlist](Screenshots/16.Watchlist.png)
 
 ---
 ## Enrich Authentication Logs with GeoIP Data
