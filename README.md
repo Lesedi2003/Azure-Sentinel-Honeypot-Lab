@@ -269,8 +269,9 @@ In this lab, the watchlist allows source IP addresses to be mapped to geographic
 ![Watchlist](Screenshots/16.Watchlist.png)
 
 ---
+GetWachilst Displayed to see that the accounts now have location with the _GetWatchList("geoip") query
 
-Screenshots/17.Location-Detected-Logs.png   TO TELL!!!!
+![Get watchlist](Screenshots/17.Location-Detected-Logs.png) 
 
 
 ## Enrich Authentication Logs with GeoIP Data
@@ -315,7 +316,7 @@ Selecting a location reveals additional information including:
 
 This visualization provides analysts with an intuitive way to understand where attacks are originating and identify high-volume attack sources.
 
-![Attack Map](ScreenshotS/20.VM-woekbook-Graph)
+![Attack Map](Screenshots/20.VM-workbook-Graph.png)
 
 ---
 
