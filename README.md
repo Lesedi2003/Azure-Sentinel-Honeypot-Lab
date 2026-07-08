@@ -177,7 +177,7 @@ The Windows virtual machine was connected to the workspace so that Windows Secur
 
 This workspace serves as the primary data source for Microsoft Sentinel.
 
-![Log Analytics Workspace](Screenshot/10.Log-Analytics-Workspace.png)
+![Log Analytics Workspace](Screenshots/09.LAW-Connected-SIEM.png)
 
 ---
 
