@@ -165,7 +165,7 @@ Windows records successful logons using **Event ID 4624 (Successful Logon)**.
 
 Having both successful and failed authentication events provides useful context when investigating suspicious login activity.
 
-![Windows Event Viewer - Successful Login](Screenshot/09.EventViewer-4624.png)
+![Windows Event Viewer - Successful Login](Screenshots/Successful-Logon.png)
 
 ---
 
