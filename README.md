@@ -189,7 +189,7 @@ This configuration allows Windows authentication events, including successful an
 
 Without enabling this connector, Windows Security Events would not be available for investigation.
 
-![Windows Security Events Connector](Screenshot/10.Windows-Security-Events.png)
+![Windows Security Events Connector]()
 
 ---
 
