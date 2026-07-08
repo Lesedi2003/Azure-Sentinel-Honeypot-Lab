@@ -296,7 +296,7 @@ A custom Microsoft Sentinel Workbook was created to visualize authentication att
 
 The workbook transforms raw log data into interactive charts and maps, allowing analysts to quickly identify attack trends and geographical patterns.
 
-![Workbook Creation](Screenshot/19.Workbook-Creation.png)
+![Workbook Creation](Screenshots/19.workbook-creation.png)
 
 ---
 
@@ -315,7 +315,7 @@ Selecting a location reveals additional information including:
 
 This visualization provides analysts with an intuitive way to understand where attacks are originating and identify high-volume attack sources.
 
-![Attack Map](Screenshot/20.Attack-Map.png)
+![Attack Map](ScreenshotS/20.VM-woekbook-Graph)
 
 ---
 
