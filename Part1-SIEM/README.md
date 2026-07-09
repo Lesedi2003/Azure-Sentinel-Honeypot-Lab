@@ -93,7 +93,7 @@ Think of it as a container that keeps all related Azure resources together. Inst
 
 For this project, I created a dedicated Resource Group specifically for the SOC lab, thats gonna contain resources.
 
-![Resource Group](Screenshots/01.Resource-group-overview.png)
+![Resource Group](../Screenshots/01.Resource-group-overview.png)
 
 ---
 
@@ -105,7 +105,7 @@ A Virtual Network works much like a private network inside Azure. It provides se
 
 Even though this lab only uses a single virtual machine, deploying it inside its own Virtual Network reflects how cloud environments are commonly designed in production.
 
-![Virtual Network](Screenshots/02.Virtual-Network.png)
+![Virtual Network](../Screenshots/02.Virtual-Network.png)
 
 ---
 
@@ -119,7 +119,7 @@ A honeypot is a system that is intentionally exposed to potential attackers so t
 
 Throughout this project, the virtual machine generates the Windows Security Events that Microsoft Sentinel later collects and investigates.
 
-![Virtual Machine](Screenshots/03.Virtual-Machine.png)
+![Virtual Machine](../Screenshots/03.Virtual-Machine.png)
 
 ---
 
@@ -133,7 +133,7 @@ Allowing unrestricted inbound traffic makes the virtual machine much more visibl
 
 > ⚠️ **Note:** This configuration was created only for this controlled lab. In a production environment, you’d never do that, it’s a huge security risk — it’s like leaving your front door wide open, just to see who walks in. Definitely not something you’d do at home, but perfect for this experiment.
 
-![Network Security Group](Screenshots/04.NSG-Allow-Traffic.png)
+![Network Security Group](../Screenshots/04.NSG-Allow-Traffic.png)
 
 ---
 
@@ -176,7 +176,7 @@ This confirmed that:
 
 Successfully connecting to the server also confirmed that the Network Security Group configuration was working as expected.
 
-![RDP Connection](Screenshots/05.Connected-VM-to-Windows.png)
+![RDP Connection](../Screenshots/05.Connected-VM-to-Windows.png)
 
 ---
 
@@ -190,7 +190,7 @@ This increases the likelihood of receiving unsolicited traffic, allowing Microso
 
 > ⚠️ **Note:** Disabling Windows Firewall is intentionally insecure and should never be done on production systems. It was performed only for this controlled cybersecurity lab.
 
-![Windows Firewall Disabled](Screenshots/06.Diable-Windows-Firewall.png)
+![Windows Firewall Disabled](../Screenshots/06.Diable-Windows-Firewall.png)
 
 ---
 
@@ -206,7 +206,7 @@ Receiving successful responses confirmed that:
 
 At this point, the environment was ready to begin attracting real-world network activity.
 
-![Connectivity Test](Screenshots/07.Ping-VM.png)
+![Connectivity Test](../Screenshots/07.Ping-VM.png)
 
 ---
 
@@ -226,7 +226,7 @@ These logs become extremely valuable during security investigations because they
 
 Later in this project, these same events are collected by the Azure Monitor Agent and stored inside the **SecurityEvent** table in the Log Analytics Workspace.
 
-![Windows Event Viewer](Screenshots/Windows-Event-Viewer.png)
+![Windows Event Viewer](../Screenshots/Windows-Event-Viewer.png)
 
 ---
 
@@ -246,7 +246,7 @@ Failed logon events are some of the most commonly investigated events in a Secur
 
 Later in the project, these same events become the primary source of data used for threat hunting within Microsoft Sentinel.
 
-![Failed Logon](Screenshots/08.Logon-Failed.png)
+![Failed Logon](../Screenshots/08.Logon-Failed.png)
 
 ---
 
@@ -262,7 +262,7 @@ For example, an analyst might investigate whether a failed login attempt was eve
 
 Understanding the relationship between these events helps identify suspicious authentication activity.
 
-![Successful Logon](Screenshots/Successful-Logon.png)
+![Successful Logon](../Screenshots/Successful-Logon.png)
 
 ---
 
@@ -297,7 +297,7 @@ Instead of leaving Windows Security Events on the virtual machine, Azure collect
 
 Without a Log Analytics Workspace, Microsoft Sentinel would have no security data to analyze.
 
-![Log Analytics Workspace](Screenshots/09.LAW.png)
+![Log Analytics Workspace](../Screenshots/09.LAW.png)
 
 ---
 
@@ -311,7 +311,7 @@ Rather than storing logs itself, Sentinel uses the Log Analytics Workspace as it
 
 Once connected, Sentinel can search, investigate, visualize, and alert on the security events stored inside the workspace.
 
-![Microsoft Sentinel](Screenshots/Sentinel-Connected.png)
+![Microsoft Sentinel](../Screenshots/Sentinel-Connected.png)
 
 ---
 
@@ -325,7 +325,7 @@ In this project, the connector was configured to collect Windows Security Events
 
 Without enabling this connector, Windows authentication events would never reach Microsoft Sentinel.
 
-![Windows Security Events Connector](Screenshots/10.Windows-Security-Event.png)
+![Windows Security Events Connector](../Screenshots/10.Windows-Security-Event.png)
 
 ---
 
@@ -339,7 +339,7 @@ Whenever Windows records a new Security Event, the Azure Monitor Agent collects 
 
 Without the Azure Monitor Agent, Windows would continue recording events locally, but Microsoft Sentinel would never see them.
 
-![Azure Monitor Agent](Screenshots/11.AMA.png)
+![Azure Monitor Agent](../Screenshots/11.AMA.png)
 
 ---
 
@@ -362,7 +362,7 @@ Once the Azure Monitor Agent began forwarding telemetry, Kusto Query Language (K
 
 The following query displays all Windows Security Events:
 
-![Security Event table](Screenshots/12.Logs-generated.png)
+![Security Event table](../Screenshots/12.Logs-generated.png)
 
 
 ---
@@ -406,7 +406,7 @@ Each event contains useful information including:
 
 These details help analysts determine whether login attempts are likely to be legitimate user mistakes or malicious activity such as brute-force attacks.
 
-![Failed Logons](Screenshots/13.Failed-Logon.png)
+![Failed Logons](../Screenshots/13.Failed-Logon.png)
 
 ---
 
@@ -435,7 +435,7 @@ So, the goal of the was to bring that same geographic information directly into 
 
 This creates a more efficient investigation workflow, allowing analysts to investigate authentication events and their geographic origin from a single interface.
 
-![IP Lookup](Screenshots/14.IPLookUp.png)
+![IP Lookup](../Screenshots/14.IPLookUp.png)
 
 ---
 
@@ -458,7 +458,7 @@ In this project, the Watchlist acts as a reference table that Microsoft Sentinel
 
 This additional context makes it much easier to understand where authentication attempts are originating and helps identify patterns during the investigation.
 
-![GeoIP Dataset](Screenshots/15.geo-spreadsheet.png)
+![GeoIP Dataset](../Screenshots/15.geo-spreadsheet.png)
 
 ---
 
@@ -470,7 +470,7 @@ This allows KQL to compare attacker IP addresses against the GeoIP database and 
 
 Instead of only seeing an IP address, I could now identify the country and city associated with each attack in sentinel, not having to go out to look for it somewhere else.
 
-![GeoIP Watchlist](Screenshots/16.Watchlist.png)
+![GeoIP Watchlist](../Screenshots/16.Watchlist.png)
 
 ---
 ## 📋 Verifying the GeoIP Watchlist
@@ -496,7 +496,7 @@ This verification step confirmed that the Watchlist was ready to be used for dat
 ```kusto
 _GetWatchlist("geoip")
 ```
-![Get Watchlist](Screenshots/17.Location-Detected-Logs.png)
+![Get Watchlist](../Screenshots/17.Location-Detected-Logs.png)
 
 ---
 
@@ -543,7 +543,7 @@ Longitude: ...
 
 This makes it much easier to understand where authentication attempts are originating.
 
-![GeoIP KQL Query](Screenshots/18.Specified-IPadress-Location.png)
+![GeoIP KQL Query](../Screenshots/18.Specified-IPadress-Location.png)
 
 ---
 
@@ -579,7 +579,7 @@ The workbook uses the latitude and longitude values from the GeoIP Watchlist to 
 
 This provides a much clearer view of where attack activity is originating compared to viewing raw log entries alone.
 
-![Workbook Creation](Screenshots/19.workbook-creation.png)
+![Workbook Creation](../Screenshots/19.workbook-creation.png)
 
 ---
 
@@ -599,7 +599,7 @@ Selecting a marker displays additional information about the attacks, including:
 This visualization makes it easier to identify attack hotspots and understand where malicious activity is originating.
 It’s oddly satisfying to see the attacks light up across the globe.
 
-![Attack Map](Screenshots/20.VM-workbook-Graph.png)
+![Attack Map](../Screenshots/20.VM-workbook-Graph.png)
 
 ---
 
