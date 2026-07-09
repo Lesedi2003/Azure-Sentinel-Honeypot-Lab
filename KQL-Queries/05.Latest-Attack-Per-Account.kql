@@ -1,0 +1,12 @@
+SecurityEvent
+| where EventID == 4625
+| summarize Attempts=count(), arg_max(TimeGenerated, *) by Account
+| project
+TimeGenerated,
+Account,
+AccountType,
+EventID,
+Activity,
+IpAddress,
+Attempts
+| order by TimeGenerated desc

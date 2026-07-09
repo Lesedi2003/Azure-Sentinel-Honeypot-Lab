@@ -1,0 +1,4 @@
+SecurityEvent
+| where EventID == 4625
+| summarize Attempts=count() by Account
+| order by Attempts desc

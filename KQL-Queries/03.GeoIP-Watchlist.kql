@@ -1,0 +1,16 @@
+let GeoIPDB_FULL = _GetWatchlist("geoip");
+
+let WindowsEvents =
+SecurityEvent
+| where EventID == 4625
+| evaluate ipv4_lookup(GeoIPDB_FULL, IpAddress, network);
+
+WindowsEvents
+| project
+    TimeGenerated,
+    Account,
+    IpAddress,
+    Country = countryname,
+    City = cityname,
+    Latitude = latitude,
+    Longitude = longitude
