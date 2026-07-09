@@ -12,6 +12,8 @@ In this Lab, I built a simple SOC environment that allows exactly that.
 
 As soon as the virtual machine was exposed to the internet, it began receiving unsolicited authentication attempts from automated scanners and bots. Microsoft Sentinel collected those events, allowing them to be investigated using KQL, enriched with geographic information, and visualized through an interactive dashboard.
 
+---
+
 # 🎯 Lab Objectives
 
 The main goals of this lab were to:
@@ -601,40 +603,6 @@ It’s oddly satisfying to see the attacks light up across the globe.
 
 ---
 
-# 🔍 Key Findings
-
-During this project, the internet-facing virtual machine began receiving authentication attempts shortly after it was exposed to the internet.
-
-Some of the observations included:
-
-- Multiple failed Remote Desktop authentication attempts (Event ID **4625**)
-- Repeated attempts against common usernames such as **Administrator**, **Admin** as well as **Test**
-- Authentication attempts originating from multiple public IP addresses
-- Geographic distribution of attack sources using GeoIP enrichment
-- Successful collection and investigation of Windows Security Events using Microsoft Sentinel
-
-These findings demonstrate how quickly publicly accessible systems attract automated scanning and authentication attempts.
-
----
-
-# 🎓 Skills Demonstrated
-
-Through this project, I gained practical experience with:
-
-- Microsoft Azure
-- Microsoft Sentinel (SIEM)
-- Azure Monitor Agent (AMA)
-- Log Analytics Workspace
-- Windows Security Event Logging
-- Kusto Query Language (KQL)
-- Threat Investigation
-- Log Analysis
-- GeoIP Data Enrichment
-- Microsoft Sentinel Watchlists
-- Microsoft Sentinel Workbooks
-
----
-
 # 💡 Lessons Learned
 
 Before completing this project, I understood the individual Azure services but didn't fully understand how they worked together in a security monitoring environment.
@@ -652,3 +620,12 @@ Building this lab helped me understand the complete lifecycle of a security even
 Understanding this workflow gave me a much clearer picture of how Microsoft Sentinel functions as a cloud-native SIEM platform.
 
 ---
+## Conclusion
+
+In this phase of the project, a cloud-based SIEM environment was successfully deployed using Microsoft Azure and Microsoft Sentinel. A Windows Server virtual machine was configured as a honeypot and exposed to the internet to generate real-world security events. Azure Monitor and Log Analytics Workspace were used to collect and store Windows Security Event logs, while Microsoft Sentinel provided centralized monitoring and analysis capabilities.
+
+Using Kusto Query Language (KQL), security events were queried and analyzed to identify failed Remote Desktop Protocol (RDP) authentication attempts originating from various locations around the world. The collected telemetry was further visualized on a geographic attack map, providing valuable insight into attacker activity and demonstrating the effectiveness of centralized log analysis.
+
+This implementation established the detection and monitoring foundation of a modern Security Operations Center (SOC). In the next phase of the project, the environment will be enhanced with Security Orchestration, Automation, and Response (SOAR) capabilities by implementing analytics rules, incident management, automation rules, and Logic App playbooks to automate threat response workflows.
+
+
