@@ -1,4 +1,4 @@
-# 🛡️ Azure Sentinel SIEM & SOAR Lab
+# 🛡️ Building a Cloud SOC with Microsoft Sentinel (SIEM & SOAR)
 
 ## 📖 Overview
 
