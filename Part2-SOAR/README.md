@@ -48,7 +48,7 @@ The following diagram illustrates the automated response workflow implemented du
                  SOC Analyst Notification
 ```
 
-Unlike manual incident response, this workflow executes automatically without requiring analyst intervention.
+This workflow executes automatically without requiring analyst intervention.
 
 Once Microsoft Sentinel creates an incident, the Automation Rule immediately launches the Logic App Playbook, which performs the predefined response action.
 
