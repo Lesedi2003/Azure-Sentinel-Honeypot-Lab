@@ -26,8 +26,6 @@ The primary objectives of this lab were to:
 
 # 🏗️ SOAR Architecture
 
-Unlike the SIEM implementation, which focused on collecting and analyzing security events, this phase focuses on **automating the response** once Microsoft Sentinel has already detected suspicious activity.
-
 The following diagram illustrates the automated response workflow implemented during this lab.
 
 ```text
