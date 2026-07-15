@@ -1,23 +1,14 @@
 # 📌 Project Scenario
 
-In the first phase of this project, Microsoft Sentinel was configured as a cloud-native **Security Information and Event Management (SIEM)** solution.
+Detecting a threat is only the beginning.
 
-The honeypot successfully collected Windows Security Events, suspicious authentication attempts were investigated using Kusto Query Language (KQL), and Microsoft Sentinel generated security incidents whenever the configured analytics rule detected malicious activity.
+Once a security incident has been identified, someone needs to review it, decide how serious it is, and begin responding. In a busy Security Operations Center (SOC), performing these tasks manually for every alert can quickly become repetitive and time-consuming.
 
-However, detecting threats is only one part of a Security Operations Center (SOC).
+This is where Security Orchestration, Automation, and Response (SOAR) becomes valuable.
 
-Once an incident has been created, someone still needs to respond.
+In this lab, I extended the Microsoft Sentinel environment by introducing automated incident response. Whenever the Analytics Rule detected suspicious authentication activity and created an incident, Microsoft Sentinel automatically triggered an Azure Logic App (Playbook) that sent an email notification to the SOC analyst.
 
-Traditionally, this process involves a security analyst reviewing the incident, determining its severity, notifying the appropriate personnel, and beginning the investigation. Although effective, performing these tasks manually for every incident can quickly become repetitive, especially in environments where hundreds or even thousands of alerts are generated each day.
-
-This is where **Security Orchestration, Automation, and Response (SOAR)** becomes valuable.
-
-Rather than relying on an analyst to perform the same actions repeatedly, Microsoft Sentinel can automatically execute predefined response workflows whenever specific security incidents occur.
-
-In this phase of the project, I extended the SIEM environment by implementing a SOAR solution using **Microsoft Sentinel Automation Rules** and **Azure Logic Apps**.
-
-When Microsoft Sentinel detects multiple failed Remote Desktop Protocol (RDP) authentication attempts and creates an incident, an Automation Rule automatically launches a Logic App Playbook that sends an email notification to the SOC analyst.
-
+This demonstrates how repetitive response tasks can be automated, allowing analysts to respond to security incidents more efficiently and consistently.
 
 ---
 
