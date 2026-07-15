@@ -632,4 +632,6 @@ This implementation established the detection and monitoring foundation of a mod
 
 ➡️ **[See SIEM Architecture](../SIEM-Architecture/Part1-SIEM-Architecture.png)**
 
+➡️ **[View the complete SIEM + SOAR Architecture](../SIEM-SOAR-Architecture/SIEM-SOAR-Architecture.png)**
+
 ➡️ **[Go to main page](../README.md)**
