@@ -26,7 +26,6 @@ When Microsoft Sentinel detects multiple failed Remote Desktop Protocol (RDP) au
 The primary objectives of this lab were to:
 
 - Create a Microsoft Sentinel Analytics Rule capable of detecting suspicious authentication activity.
-- Generate security incidents automatically from failed RDP authentication attempts.
 - Develop a Logic App Playbook using the Microsoft Sentinel Incident Trigger.
 - Configure automated response actions within the Playbook.
 - Create a Microsoft Sentinel Automation Rule to execute the Playbook whenever an incident is created.
