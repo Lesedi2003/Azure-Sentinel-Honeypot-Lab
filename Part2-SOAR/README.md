@@ -349,7 +349,8 @@ More importantly, it demonstrated how these Azure services work together to move
 
 ---
 
-➡️ **Return to the main project:
+➡️ **[See SOAR Architecture](../SOAR-Architecture/Part2-SIEM-Architecture.png)**
+
 ➡️ **Return to the main project:** [Azure SIEM & SOAR Lab](../README.md)
 
 
