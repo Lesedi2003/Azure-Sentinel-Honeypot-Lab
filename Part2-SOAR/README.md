@@ -4,7 +4,7 @@ Detecting a threat is only the beginning.
 
 Once a security incident has been identified, someone needs to review it, decide how serious it is, and begin responding. In a busy Security Operations Center (SOC), performing these tasks manually for every alert can quickly become repetitive and time-consuming.
 
-This is where Security Orchestration, Automation, and Response (SOAR) becomes valuable.
+This is where **Security Orchestration, Automation, and Response (SOAR)** becomes valuable.
 
 In this lab, I extended the Microsoft Sentinel environment by introducing automated incident response. Whenever the Analytics Rule detected suspicious authentication activity and created an incident, Microsoft Sentinel automatically triggered an Azure Logic App (Playbook) that sent an email notification to the SOC analyst.
 
