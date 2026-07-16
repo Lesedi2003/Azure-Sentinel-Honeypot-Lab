@@ -103,7 +103,7 @@ Microsoft Sentinel provides several Playbook templates depending on when the aut
 
 This template automatically starts the workflow whenever Microsoft Sentinel creates a qualifying incident, making it the ideal starting point for incident response automation.
 
-![Playbook Trigger](../SOAR-Screenshots/03.Playbook-With-Incident-Trigger.png)
+![Playbook Trigger](../SOAR-Screenshots/03.PlayBook-With-Incident-Trigger.png)
 
 ---
 
